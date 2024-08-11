@@ -15,6 +15,10 @@ function HeaderMain () {
                             <Nav />
                         </div>
                     </div>
+                    <div className={style.text}>
+                        <p>Создаём</p>
+                        <p>медиа</p>
+                    </div>
                 </div>
             </div>
         </div>
