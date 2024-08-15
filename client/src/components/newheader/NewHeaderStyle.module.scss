@@ -17,7 +17,9 @@
     height: 100vh;
     overflow: hidden;
     z-index: -1;
-
+    background-image: url("./intro.jpg");
+    background-size: cover;
+    background-position: center center;
     //max-height: 1080px;
     .videoContent {
       width: 100%;
@@ -71,10 +73,10 @@
       max-width: calc(1920px / 2);
       height: 100vh;
       //max-height: 1080px;
-      margin-top: -69px;
+      margin-top: -50px;
       .btn {
         width: calc(100% - 40px);
-        height: 209px;
+        height: 150px;
         //border-bottom: 1px solid #FFFFFF;
         color: #FFF;
         display: flex;
@@ -84,7 +86,7 @@
         cursor: pointer;
         transition: 0.5s ease-in-out;
         position: relative;
-        font-size: 30pt;
+        font-size: 24pt;
         font-weight: 200;
         .border{
           display: flex;
@@ -111,7 +113,6 @@
           width: 100%;
           height: 1px;
           background-color: #AE57FF;
-
           transition: 0.5s ease-in-out;
         }
       }

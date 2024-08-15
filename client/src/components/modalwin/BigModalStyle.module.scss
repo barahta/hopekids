@@ -1,0 +1,29 @@
+.main{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px 0px 0px;
+  z-index: 100000;
+  .closes{
+    font-size: 20pt;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+  }
+  .logo{
+    font-size: 20pt;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    img{
+      width: 200px;
+    }
+  }
+}

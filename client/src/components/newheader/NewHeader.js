@@ -1,4 +1,5 @@
 import style from './NewHeaderStyle.module.scss';
+import {Link} from "react-router-dom";
 
 function NewHeader() {
     return (
@@ -20,13 +21,12 @@ function NewHeader() {
                 </div>
                 <div className={style.rightpart}>
                     <div className={style.board}>
-                        <div className={style.btn}>
-                            Активы группы
-                        <div className={style.border}></div>
+                        <div className={style.btn}>Активы группы<div className={style.border}></div>
                         </div>
                         <div className={style.btn}>О нас<div className={style.border}></div></div>
-                        <div className={style.btn}>Новости<div className={style.border}></div></div>
+                        <Link to='/allnews' className={style.btn}>Новости<div className={style.border}></div></Link>
                         <div className={style.btn}>Контакты<div className={style.border}></div></div>
+                        <Link to='/vakansii' className={style.btn}>Вакансии<div className={style.border}></div></Link>
                     </div>
 
                 </div>

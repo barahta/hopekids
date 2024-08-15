@@ -50,14 +50,19 @@ function Footer (){
                         <div className={style.phone}>+7(3462) 22-12-11 (6139)</div>
                         <div className={style.email}>site@in-news.ru</div>
                     </div>
-                    <div className={style.sociality}></div>
-                    <div className={style.contacts}>
+                    <div className={style.sociality}>
+                        <img src="/files/sociality/telegram.png" alt="" height='71px'/>
+                        <img src="/files/sociality/youtube.png" alt=""/>
+                        <img src="/files/sociality/vk.png" alt=""/>
+                        <img src="/files/sociality/ok.png" alt=""/>
+                    </div>
+                    <div className={style.autor}>
                         <div className={style.copyright}>
 
                         </div>
-                        <div className={style.contacts}>
-                            <div className={style.contacts}>"Сетевое издание "ОМЕДИА!"</div>
-                            <div className={style.contacts}>Все права защищены</div>
+                        <div className={style.description}>
+                            <div className={style.text}>"Сетевое издание "ОМЕДИА!"</div>
+                            <div className={style.text}>Все права защищены</div>
                         </div>
                     </div>
                 </div>

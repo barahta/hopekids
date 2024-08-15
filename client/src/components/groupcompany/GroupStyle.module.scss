@@ -15,13 +15,15 @@
     max-width: 1920px;
     height: 100%;
     .title{
-      width: 100%;
+      width: calc(100% - 100px);
       display: flex;
       align-items: center;
       justify-content: flex-start;
       color: #6E037B;
+      font-family: 'ALS', sans-serif;
       font-size: 60px;
       font-weight: 800;
+      margin-left: 100px;
     }
     .companies{
       width: 100%;
@@ -174,7 +176,7 @@
       }
     }
     .more{
-      width: 100%;
+      width: calc(100% - 100px);
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -184,6 +186,7 @@
       margin-top: 50px;
       cursor: pointer;
       transition: 0.2s;
+      margin-right: 100px;
     }
     .more:hover{
       color: #6E037B;

@@ -26,6 +26,7 @@
       background-image: url("./images/flyright.png");
       background-size: 100% 100%;
       margin-left: -10%;
+      margin-top: -50px;
 rotate: 3deg;
       animation: flyrightAnimation 4s ease-in-out infinite;
     }
@@ -34,7 +35,7 @@ rotate: 3deg;
         transform: translateX(0) translateY(0) rotate(-1deg);
       }
       50% {
-        transform: translateX(-10px) translateY(-20px) rotate(-3deg);
+        transform: translateX(-10px) translateY(-15px) rotate(-3deg);
       }
     }
 
@@ -43,7 +44,7 @@ rotate: 3deg;
         transform: translateX(0) translateY(0) rotate(2deg);
       }
       50% {
-        transform: translateX(10px) translateY(10px) rotate(4deg);
+        transform: translateX(10px) translateY(10px) rotate(3deg);
       }
     }
   }
