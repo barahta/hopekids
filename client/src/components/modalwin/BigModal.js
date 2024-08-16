@@ -1,7 +1,7 @@
 import style from './BigModalStyle.module.scss';
 import {useEffect} from "react";
 
-function BigModal({activemodal, setActivemodal, data}) {
+function BigModal({activemodal, setActivemodal, data, setData}) {
     useEffect(() => {
         let scrollPosition = 0;
 
@@ -23,11 +23,18 @@ function BigModal({activemodal, setActivemodal, data}) {
         }
     }, [activemodal]);
 
+
     return (
-        <div className={style.main} style={activemodal ? {display: 'flex'} : {}}>
-            <div className={style.logo}><img src="/files/header/logomain.svg" alt=""/></div>
-            <div className={style.closes} onClick={() => setActivemodal(false)}>Close</div>
-            {data}
+        <div className={style.main} style={activemodal ? {display: 'flex'} : {}} >
+
+            <div className={style.backclose} onClick={() => {setActivemodal(false); setData('')}}>
+                <div className={style.logo}><img src="/files/header/logomain.svg" alt=""/></div>
+                <div className={style.closes} onClick={() => {setActivemodal(false); setData('')}}>Закрыть</div>
+            </div>
+            <div className={style.content}>
+                {data}
+            </div>
+
         </div>
     );
 }
