@@ -22,10 +22,10 @@ function SmallHeader(){
                             <div className={style.text}>Новости</div>
                             <div className={style.active}></div>
                         </Link>
-                        <div className={style.page}>
+                        <Link to='/contacts' className={style.page}>
                             <div className={style.text}>Контакты</div>
                             <div className={style.active}></div>
-                        </div>
+                        </Link>
                         <Link to='/vakansii' className={style.page}>
                             <div className={style.text}>Вакансии</div>
                             <div className={style.active}></div>

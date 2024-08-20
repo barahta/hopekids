@@ -5,17 +5,27 @@ import ClientPage from './pages/Main.js';
 import Main from "./pages/Main.js";
 import AllNews from "./pages/AllNews";
 import Vakansii from "./pages/Vakansii";
+import Contacts from "./pages/Contacts";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+import {observer} from "mobx-react-lite";
+
 
 function App() {
   return (
       <Router>
         <Routes>
+
             <Route path="/" element={<Main />} />
             <Route path="/allnews" element={<AllNews />} />
             <Route path="/vakansii" element={<Vakansii />} />
+            <Route path="/contacts" element={<Contacts />} />
         </Routes>
+          <ToastContainer />
       </Router>
   );
 }
 
-export default App;
+export default observer(App)

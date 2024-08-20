@@ -25,7 +25,7 @@ function NewHeader() {
                         </div>
                         <div className={style.btn}>О нас<div className={style.border}></div></div>
                         <Link to='/allnews' className={style.btn}>Новости<div className={style.border}></div></Link>
-                        <div className={style.btn}>Контакты<div className={style.border}></div></div>
+                        <Link to='/contacts' className={style.btn}>Контакты<div className={style.border}></div></Link>
                         <Link to='/vakansii' className={style.btn}>Вакансии<div className={style.border}></div></Link>
                     </div>
 

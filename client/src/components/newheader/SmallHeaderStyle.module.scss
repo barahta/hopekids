@@ -5,8 +5,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: rgba(0,0,0,0.8);
   text-decoration: none;
+  margin-bottom: -100px;
+  z-index: 1;
   .container{
     width: 100%;
     max-width: 1920px;
@@ -14,6 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
     .leftpart{
       img{
         width: 250px;

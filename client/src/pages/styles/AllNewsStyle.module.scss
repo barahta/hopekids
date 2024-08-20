@@ -43,7 +43,21 @@
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: wrap;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        animation: fadeInUp 0.6s forwards;
 
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       .morebtn{
         width: 100%;

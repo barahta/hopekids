@@ -4,6 +4,10 @@ import Footer from "../components/footer/Footer";
 import NewsPost from "../components/news/NewsPost";
 import SmallHeader from "../components/newheader/SmallHeader";
 import {useEffect, useState} from "react";
+import FormModal from "../components/modalwin/FormModal";
+import PostContact from "../components/forms/PostContact";
+import WriteModal from "../components/modalwin/WriteModal";
+import PostResume from "../components/forms/PostResume";
 
 function AllNews (){
 
@@ -13,7 +17,7 @@ function AllNews (){
             positions: [
                 {
                     name: 'Motion-дизайнер',
-                    responsibilities: [
+                    respon: [
                     ],
                     requierments: [
                         'Хорошее визуальное восприятие и способность анализировать композицию, цвета, формы и композиционные решения',
@@ -27,7 +31,8 @@ function AllNews (){
                         'Льготный доступ к предприятиям, входящим в группу компаний OMEDIA!'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 }
             ]
         },
@@ -36,7 +41,7 @@ function AllNews (){
             positions: [
                 {
                     name: 'Аниматор',
-                    responsibilities: [
+                    respon: [
                     ],
                     requierments: [
                         'Возраст от 16 лет',
@@ -53,7 +58,8 @@ function AllNews (){
                         'Заработная плата от 15 000'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 }
             ]
         },
@@ -62,7 +68,7 @@ function AllNews (){
             positions: [
                 {
                     name: 'Бухгалтер',
-                    responsibilities: [
+                    respon: [
                         'Перечень обязанностей на собеседовании'
                     ],
                     requierments: [
@@ -75,11 +81,12 @@ function AllNews (){
                         'Льготный доступ к предприятиям, входящим в группу компаний OMEDIA!'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 },
                 {
                     name: 'Радиоведущий',
-                    responsibilities: [
+                    respon: [
                         'Подготовка и ведение развлекательных, информационных программ',
                         'Участие в подготовке онлайн и офлайн-акций редакции'
                     ],
@@ -104,11 +111,12 @@ function AllNews (){
                         'Офис в центральном районе города'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 },
                 {
                     name: 'Редактор информационных радиопрограмм',
-                    responsibilities: [
+                    respon: [
                         'Написание новостей (ежедневно) и сценариев информационных программ (1-2 раз в неделю)',
                         'Посещение мероприятий по заданию редакции',
                         'Мониторинг информационного пространства, поиск интересных информационных поводов и отработка их',
@@ -125,11 +133,12 @@ function AllNews (){
                     conditions: [
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 },
                 {
                     name: 'Корреспондент',
-                    responsibilities: [
+                    respon: [
                         'Посещение мероприятий по заданию редакции',
                         'Проведение интервью',
                         'Написание собственных новостей, обзоров',
@@ -154,11 +163,12 @@ function AllNews (){
                         'Возможность учиться у профессионалов прямо на рабочем месте'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 },
                 {
                     name: 'Помощник оператора',
-                    responsibilities: [
+                    respon: [
                         'Съемка сюжетов в новостные программы',
                         'Запись новостных передач в студии',
                         'Работа на прямых трансляциях'
@@ -173,11 +183,12 @@ function AllNews (){
                         'Свобода творческой реализации и рост'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 },
                 {
                     name: 'Юрисконсульт',
-                    responsibilities: [
+                    respon: [
                         'Экспертиза, подготовка договорных документов, дополнительные соглашения, протоколы разногласий, письма контрагентам',
                         'Досудебное разрешение споров; претензионно-исковая работа и работа с арбитражными делами (подача исков, подготовка отзывов)',
                         'Правовая оценка документов',
@@ -200,11 +211,12 @@ function AllNews (){
                         'Трудоустройство в соответствии с законодательством РФ'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 },
                 {
                     name: 'SMM-специалист',
-                    responsibilities: [
+                    respon: [
                         'Съёмки для соцсетей',
                         'Монтаж видеороликов',
                         'Генерирование идей',
@@ -224,11 +236,12 @@ function AllNews (){
                         'Базовое обучение'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 },
                 {
                     name: 'Менеджер по продажам',
-                    responsibilities: [
+                    respon: [
                         'Высшее образование',
                         'Опыт работы в продажах (желательно рекламы)',
                         'Наличие личного автомобиля'
@@ -243,7 +256,8 @@ function AllNews (){
                         'Льготный доступ к предприятиям, входящим в группу компаний OMEDIA!'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 }
             ]
         },
@@ -252,7 +266,7 @@ function AllNews (){
             positions: [
                 {
                     name: 'Управляющий на предприятие по выращиванию зелени и салатных культур',
-                    responsibilities: [
+                    respon: [
                         'Общее текущее руководство производственно-хозяйственной деятельностью сельскохозяйственного предприятия',
                         'Руководство коллективом и создание оптимальных условий труда для выполнения производственных планов',
                         'Организация и контроль технологического цикла в производстве',
@@ -283,7 +297,8 @@ function AllNews (){
                         'Внимательность',
                         'Исполнительность',
                         'Умение работать в режиме многозадачности'
-                    ]
+                    ],
+                    open: false
                 }
             ]
         },
@@ -292,7 +307,7 @@ function AllNews (){
             positions: [
                 {
                     name: 'Специалист по охране труда и промышленной безопасности (Сургут)',
-                    responsibilities: [
+                    respon: [
                         'Осуществлять контроль над соблюдением на предприятии и в его подразделениях законодательных и иных нормативных правовых актов по охране труда, за предоставлением работникам установленных льгот и компенсаций по условиям труда',
                         'Изучать условия труда на рабочих местах, подготавливать и вносить предложения по разработке и внедрении более совершенных конструкций оградительной техники, предохранительных и блокировочных устройств, других средств защиты от воздействия опасных и вредных производственных факторов',
                         'Участвовать в разработке мероприятий по предупреждению профессиональных заболеваний и несчастных случаев на производстве, по улучшению условий труда и доведению их до требований нормативных правовых актов по охране труда, а также оказывать организационную помощь по выполнению разработанных мероприятий'
@@ -311,11 +326,12 @@ function AllNews (){
                         'Карьерный и профессиональный рост в компании'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 },
                 {
                     name: 'Начальник участка строительного направления (Сургут)',
-                    responsibilities: [
+                    respon: [
                         'Подготовка строительного производства на участке строительства',
                         'Материально-техническое обеспечение строительного производства на участке строительства',
                         'Оперативное управление строительным производством на участке строительства',
@@ -335,11 +351,12 @@ function AllNews (){
                         'Заработная плата от 80 000 до 100 000 рублей'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 },
                 {
                     name: 'Руководитель проекта строительного направления (Сургут)',
-                    responsibilities: [
+                    respon: [
                         'Определять устав, цели, задачи и результаты проекта',
                         'Продумывать и составлять план по подготовке и внедрению нового проекта, определять контрольные точки',
                         'Определять состав работ, необходимый для проработки и внедрению проекта',
@@ -363,39 +380,145 @@ function AllNews (){
                         'Заработная плата от 60 000 до 80 000 рублей'
                     ],
                     keyskills: [
-                    ]
+                    ],
+                    open: false
                 }
             ]
         }
 
     ]
 
+    const [checkvak, setCheckvak] = useState('')
+    const [activemodal, setActivemodal] = useState(false)
+    const [data, setData] = useState('')
+    let totality = 0
+
+    const calcTotal = () => {
+        vakansii.forEach(pos=>{
+            totality=totality+pos.positions.length
+        })
+        return totality
+    }
+
+    const [usevak, setUsevak] = useState(vakansii)
+
+    const handlerPosition = (index) => {
+        if(index + 1 > 0){
+            let newlist = vakansii[index]
+            let list = []
+            list.push(newlist)
+            setUsevak(list)
+        }else{
+            setUsevak(vakansii)
+        }
+
+
+    }
+
+    const openPosition = (room, pos) => {
+        const newlist = [...usevak]
+        if(newlist[room].positions[pos].open === false){
+            newlist[room].positions[pos].open = true
+            const thisTit = document.getElementById(`tit${room}${pos}`)
+            thisTit.lastChild.style.rotate = '90deg'
+            console.log(thisTit.lastChild)
+        }else{
+            newlist[room].positions[pos].open = false
+            const thisTit = document.getElementById(`tit${room}${pos}`)
+            thisTit.lastChild.style.rotate = '0deg'
+        }
+
+        setUsevak(newlist)
+
+    }
+
+    const postResume = (pos) => {
+        setData(pos)
+        setActivemodal(true)
+    }
+
+    useEffect(()=>{
+    })
+
     return (
         <div className={style.bodymain}>
-            <SmallHeader />
-            <TwoBlocks />
+            <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<PostResume man={data}  setActivemodal={setActivemodal}/>} setData={setData} />
+            <SmallHeader/>
+            <TwoBlocks/>
             <div className={style.vakansii}>
                 <div className={style.container}>
                     <div className={style.title}>Вакансии</div>
                     <div className={style.block}>
                         <div className={style.leftpart}>
                             <div className={style.navigate}>
-                                {vakansii.map((point, index)=>(
-                                    <div className={style.point}>{point.name}<div className={style.total}>{point.positions.length}</div></div>
+                                <div className={style.point} onClick={()=>handlerPosition()}>Все вакансии<div className={style.total}>{calcTotal()}</div></div>
+                                {vakansii.map((point, index) => (
+                                    <div key={index} className={style.point} onClick={()=>handlerPosition(index)}>{point.name}<div className={style.total}>
+                                        {point.positions.length}
+                                    </div></div>
                                 ))}
                             </div>
                         </div>
-                        <div className={style.rightpart}></div>
+                        <div className={style.rightpart}>
+                            {usevak.map((com, index) => {
+                                return (
+                                    <div key={index} className={style.list}>
+                                        {com.positions.map((pos, posIndex) => (
+                                            <div key={posIndex} className={style.position}>
+                                                <div className={style.title} id={`tit${index}${posIndex}`} onClick={()=>openPosition(index, posIndex)}>
+                                                    <div className={style.text}>{pos.name}</div>
+                                                    <div className={style.next}></div>
+                                                </div>
+
+                                                <div className={style.units} style={(pos.open)?{display:'flex'}:{}}>
+                                                    <div className={style.name} style={(pos.requierments.length > 0)?{}:{display: 'none'}}>Требования</div>
+
+                                                    {/* Список требований */}
+                                                    {pos.requierments && pos.requierments.map((req, reqIndex) => (
+                                                        <div key={reqIndex} className={style.points}>
+                                                            <div className={style.slash}></div>
+                                                            <div className={style.text}>{req}</div>
+                                                        </div>
+                                                    ))}
+
+                                                    <div className={style.name} style={(pos.respon.length > 0)?{}:{display: 'none'}}>Обязанности</div>
+
+                                                    {/* Список обязанностей */}
+                                                    {pos.respon && pos.respon.map((res, resIndex) => (
+                                                        <div key={resIndex} className={style.points}>
+                                                            <div className={style.slash}></div>
+                                                            <div className={style.text}>{res}</div>
+                                                        </div>
+                                                    ))}
+
+                                                    <div className={style.name} style={(pos.conditions.length > 0)?{}:{display: 'none'}}>Условия</div>
+
+                                                    {/* Список условий */}
+                                                    {pos.conditions && pos.conditions.map((cond, condIndex) => (
+                                                        <div key={condIndex} className={style.points}>
+                                                            <div className={style.slash}></div>
+                                                            <div className={style.text}>{cond}</div>
+                                                        </div>
+                                                    ))}
+                                                    <div className={style.name} style={(pos.keyskills.length > 0)?{}:{display: 'none'}}>Ключевые навыки</div>
+
+                                                    <div className={style.skillspoints}>
+                                                        {pos.keyskills && pos.keyskills.map((skill, skillIndex) => (
+                                                            <div key={skillIndex} className={style.keypoint}>{skill}</div>
+                                                        ))}
+                                                    </div>
+                                                    <div className={style.btnresume} onClick={()=>postResume(pos)}>Откликнуться</div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
-
-
-
-
-
                 </div>
-
             </div>
-            <Footer />
+            <Footer/>
         </div>
     )
 }
