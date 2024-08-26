@@ -14,7 +14,7 @@ function Contacts() {
 
     const people = [
         {
-            photo: '',
+            photo: '1.png',
             firstname: 'Иван',
             secondname: 'Иванович',
             lastname: 'Иванов',
@@ -23,7 +23,7 @@ function Contacts() {
             position: 'Генеральный директор'
         },
         {
-            photo: '',
+            photo: '2.png',
             firstname: 'Иван',
             secondname: 'Иванович',
             lastname: 'Иванов',
@@ -32,7 +32,7 @@ function Contacts() {
             position: 'Генеральный директор'
         },
         {
-            photo: '',
+            photo: '3.png',
             firstname: 'Иван',
             secondname: 'Иванович',
             lastname: 'Иванов',
@@ -41,7 +41,7 @@ function Contacts() {
             position: 'Генеральный директор'
         },
         {
-            photo: '',
+            photo: '4.png',
             firstname: 'Иван',
             secondname: 'Иванович',
             lastname: 'Иванов',
@@ -50,7 +50,7 @@ function Contacts() {
             position: 'Генеральный директор'
         },
         {
-            photo: '',
+            photo: '5.png',
             firstname: 'Иван',
             secondname: 'Иванович',
             lastname: 'Иванов',
@@ -59,7 +59,7 @@ function Contacts() {
             position: 'Генеральный директор'
         },
         {
-            photo: '',
+            photo: '6.png',
             firstname: 'Иван',
             secondname: 'Иванович',
             lastname: 'Иванов',
@@ -68,169 +68,7 @@ function Contacts() {
             position: 'Генеральный директор'
         },
         {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
-            firstname: 'Иван',
-            secondname: 'Иванович',
-            lastname: 'Иванов',
-            email: 'mail@mail.ru',
-            departament: 'Omedia',
-            position: 'Генеральный директор'
-        },
-        {
-            photo: '',
+            photo: '7.png',
             firstname: 'Иван',
             secondname: 'Иванович',
             lastname: 'Иванов',
@@ -254,7 +92,7 @@ function Contacts() {
                             key={index}
                             // ref={(el) => blockRefs.current[index] = el}
                         >
-                            <div className={style.photo}></div>
+                            <div className={style.photo} style={(man.photo.length > 0)?{backgroundImage: `url('files/mans/${man.photo}')`}:{}}></div>
                             <div className={style.fio}>
                                 <div className={style.name}>{man.firstname}</div>
                                 <div className={style.name}>{man.secondname}</div>

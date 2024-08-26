@@ -16,7 +16,7 @@ function OpenNews({news, width}){
             </div>
 
             <div className={style.logo}>
-                <img src="/files/header/logomain.svg" alt=""/>
+                <img src="/files/header/logomain3.svg" alt=""/>
             </div>
         </div>
     )

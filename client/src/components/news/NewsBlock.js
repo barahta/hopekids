@@ -3,6 +3,7 @@ import {useState} from "react";
 import BigModal from "../modalwin/BigModal";
 import OpenCompany from "../groupcompany/OpenCompany";
 import OpenNews from "./OpenNews";
+import {Link} from "react-router-dom";
 
 function NewsBlock () {
 
@@ -197,7 +198,7 @@ function NewsBlock () {
                     {news.map((elem, index)=>{
                     if(start+3 > index && index>=start){
                         return(
-                            <div className={style.news_block} onClick={()=>openNews(elem)}>
+                            <div key={index} className={style.news_block} onClick={()=>openNews(elem)}>
                                 <div className={style.img} style={{backgroundImage: `url('/files/news/${elem.url}')`}}></div>
                                 <div className={style.date}>{elem.date}</div>
                                 <div className={style.name}>{(elem.name.length > 80)?elem.name.slice(0, 80) + '...':elem.name}</div>
@@ -212,13 +213,13 @@ function NewsBlock () {
             <div className={style.container} style={{backgroundColor: '#FFF'}}>
                 <div className={style.comas}>
                     {slash.map((active, index)=>(
-                        <div className={style.coma} onClick={()=>ActiveNews(index, active)}><div className={style.slash} style={(active === comas)?{opacity: '1'}:{}}></div></div>
+                        <div key={index} className={style.coma} onClick={()=>ActiveNews(index, active)}><div className={style.slash} style={(active === comas)?{opacity: '1'}:{}}></div></div>
                     ))}
                     </div>
                 <div className={style.more}>
                     <div className={style.openmore}>
                         <div className={style.next}></div>
-                        <div className={style.title}>Все новости</div>
+                        <Link to='/allnews' className={style.title}>Все новости</Link>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,9 @@ import Footer from "../components/footer/Footer";
 import NewsPost from "../components/news/NewsPost";
 import SmallHeader from "../components/newheader/SmallHeader";
 import {useEffect, useState} from "react";
+import OpenNews from "../components/news/OpenNews";
+import BigModal from "../components/modalwin/BigModal";
+import NewsPost2 from "../components/news/NewsPost2";
 
 function AllNews (){
     const [total, setTotal] = useState(9)
@@ -174,19 +177,30 @@ function AllNews (){
 
     ]
 
+    const [activemodal, setActivemodal] = useState(false)
+    const [data, setData] = useState('')
     const openNews = () => {
         if(total<news.length){
             setTotal(total + 9)
         }
     }
 
+    const openPost = (post) => {
+        setActivemodal(true)
+        setData(post)
+    }
     useEffect(()=>{
        if(total>=news.length){
            setMore(false)
        }
     }, [total])
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div className={style.bodymain}>
+            <BigModal data={<OpenNews news={data}  width={'900px'}/>} activemodal={activemodal} setActivemodal={setActivemodal} setData={setData}/>
             <SmallHeader />
             <TwoBlocks />
             <div className={style.allnews}>
@@ -196,7 +210,11 @@ function AllNews (){
                         {news.map((elem, index)=>{
                             if(index<total){
                                 return(
-                                    <NewsPost post={elem}/>
+                                    <div key={index} className={style.cont} onClick={()=>openPost(elem)}>
+                                        <NewsPost2  post={elem} openPost={openPost}  data={data} setData={setData}  />
+                                    </div>
+
+
                                 )
                             }
 

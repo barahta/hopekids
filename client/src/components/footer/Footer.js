@@ -1,4 +1,5 @@
 import style from './FooterStyle.module.scss'
+import {Link} from "react-router-dom";
 
 function Footer (){
     return(
@@ -9,39 +10,69 @@ function Footer (){
                 <div className={style.content}>
                     <div className={style.upper}>
                         <div className={style.column}>
-                            <div className={style.point}>
-                                <div className={style.next}></div>
-                                <div className={style.text}>О нас</div>
-                            </div>
-                            <div className={style.point}>
+                            {/*<div className={style.point}>*/}
+                            {/*    <div className={style.next}></div>*/}
+                            {/*    <div className={style.text}>О нас</div>*/}
+                            {/*</div>*/}
+                            <Link to='/activegroup' className={style.point}>
                                 <div className={style.next}></div>
                                 <div className={style.text}>Активы группы</div>
-                            </div>
-                            <div className={style.point}>
+                            </Link>
+                            <Link to='/allnews'  className={style.point}>
                                 <div className={style.next}></div>
                                 <div className={style.text}>Новости</div>
-                            </div>
+                            </Link>
                         </div>
+                        {/*<div className={style.column}>*/}
+                        {/*    <div className={style.point}>*/}
+                        {/*        <div className={style.next}></div>*/}
+                        {/*        <div className={style.text}>Стратегические приоритеты</div>*/}
+                        {/*    </div>*/}
+                        {/*    <div className={style.point}>*/}
+                        {/*        <div className={style.next}></div>*/}
+                        {/*        <div className={style.text}>История</div>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                         <div className={style.column}>
-                            <div className={style.point}>
-                                <div className={style.next}></div>
-                                <div className={style.text}>Стратегические приоритеты</div>
-                            </div>
-                            <div className={style.point}>
-                                <div className={style.next}></div>
-                                <div className={style.text}>История</div>
-                            </div>
-                        </div>
-                        <div className={style.column}>
-                            <div className={style.point}>
+                            <Link to='/contacts'  className={style.point}>
                                 <div className={style.next}></div>
                                 <div className={style.text}>Контакты</div>
-                            </div>
-                            <div className={style.point}>
+                            </Link>
+                            <Link to='/vakansii'  className={style.point}>
                                 <div className={style.next}></div>
-                                <div className={style.text}>Карьера</div>
-                            </div>
+                                <div className={style.text}>Вакансии</div>
+                            </Link>
                         </div>
+                    </div>
+                    <div className={style.uppermobile}>
+                            {/*<div className={style.point}>*/}
+                            {/*    <div className={style.next}></div>*/}
+                            {/*    <div className={style.text}>О нас</div>*/}
+                            {/*</div>*/}
+                            <Link to={'/activegroup'} className={style.point}>
+                                <div className={style.next}></div>
+                                <div className={style.text}>Активы группы</div>
+                            </Link>
+                            <Link to={'/allnews'} className={style.point}>
+                                <div className={style.next}></div>
+                                <div className={style.text}>Новости</div>
+                            </Link>
+                            {/*<div className={style.point}>*/}
+                            {/*    <div className={style.next}></div>*/}
+                            {/*    <div className={style.text}>Стратегические приоритеты</div>*/}
+                            {/*</div>*/}
+                            {/*<div className={style.point}>*/}
+                            {/*    <div className={style.next}></div>*/}
+                            {/*    <div className={style.text}>История</div>*/}
+                            {/*</div>*/}
+                            <Link to={'/contacts'} className={style.point}>
+                                <div className={style.next}></div>
+                                <div className={style.text}>Контакты</div>
+                            </Link>
+                            <Link to={'/vakansii'} className={style.point}>
+                                <div className={style.next}></div>
+                                <div className={style.text}>Вакансии</div>
+                            </Link>
                     </div>
                 </div>
                 <div className={style.contacts}>

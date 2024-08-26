@@ -2,6 +2,7 @@ import style from './GroupStyle.module.scss'
 import {useState} from "react";
 import BigModal from "../modalwin/BigModal";
 import OpenCompany from "./OpenCompany";
+import {Link} from "react-router-dom";
 
 function Group (){
 
@@ -119,7 +120,7 @@ function Group (){
                     ))}
 
                 </div>
-                <div className={style.more}>Все проекты</div>
+                <Link to="/activegroup" className={style.more}>Все проекты</Link>
             </div>
 
 

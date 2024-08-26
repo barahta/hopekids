@@ -6,7 +6,7 @@ function NewAbout(){
             <div className={style.containter}>
                 <div className={style.btn}>
                     <div className={style.up}>
-                        <div className={style.ic}></div>
+                        {/*<div className={style.ic}></div>*/}
                         <div className={style.abouttext}>О нас</div>
                     </div>
                     <div className={style.img}></div>

@@ -15,15 +15,17 @@
     max-width: 1920px;
     height: 100%;
     .title{
-      width: calc(100% - 100px);
+      width: calc(100% - 50px);
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      color: #6E037B;
-      font-family: 'ALS', sans-serif;
-      font-size: 60px;
-      font-weight: 800;
-      margin-left: 100px;
+      color: #454545;
+      //font-family: 'ALS', sans-serif;
+      font-size: 40pt;
+      font-weight: 600;
+      //margin-left: 100px;
+      text-transform: uppercase;
+      margin-left: 50px;
     }
     .companies{
       width: 100%;

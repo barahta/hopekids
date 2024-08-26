@@ -9,9 +9,10 @@ import Group from "../components/groupcompany/Group";
 import NewAbout from "../components/newabout/NewAbout";
 import Actives from "../components/activeholding/Actives";
 import Footer from "../components/footer/Footer";
+import {useEffect} from "react";
+import {useLocation} from "react-router-dom";
 
 function Main () {
-
 
 
     return (
