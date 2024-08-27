@@ -11,6 +11,7 @@ import Actives from "../components/activeholding/Actives";
 import Footer from "../components/footer/Footer";
 import {useEffect} from "react";
 import {useLocation} from "react-router-dom";
+import Cosmos from "../components/cosmos/Cosmos";
 
 function Main () {
 
@@ -18,9 +19,10 @@ function Main () {
     return (
         <div className={style.bodymain}>
             <NewHeader />
-            <TwoBlocks />
-            <Group />
-            <NewAbout />
+            <Cosmos />
+            {/*<TwoBlocks />*/}
+            {/*<Group />*/}
+            {/*<NewAbout />*/}
             <Actives />
             <NewsBlock />
             <Footer />

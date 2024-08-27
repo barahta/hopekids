@@ -29,7 +29,7 @@ function NewHeader() {
             </div>
             <div className={style.container}>
                 <div className={style.leftpart}>
-                    <img src="/files/header/logomain.svg" alt=""/>
+                    <img src="/files/header/hopekidsw.svg" alt=""/>
                 </div>
                 <div className={style.rightpart}>
                     <div className={style.board}>
