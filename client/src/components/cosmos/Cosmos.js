@@ -62,7 +62,8 @@ function Cosmos () {
                 <div className={style.contenttwo}>
                     <div className={style.blocks}>
                         {whys.map((block, index) => (
-                            <div key={index} className={style.why} style={{backgroundImage: `url('files/kids/${block.image}')`}}>
+                            <div key={index} className={style.why}>
+                                <div className={style.imgblock}  style={{backgroundImage: `url('files/kids/${block.image}')`}}></div>
                                 <div className={style.desc}>
                                     <div className={style.title}>{block.title}</div>
                                     <div className={style.description}>{block.desc}</div>

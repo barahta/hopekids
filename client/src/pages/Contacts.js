@@ -7,11 +7,16 @@ import MyMap from "../components/map/Map";
 import WriteModal from "../components/modalwin/WriteModal";
 import PostContact from "../components/forms/PostContact";
 import {useMessage} from "../hooks/message.hook";
+import {Link} from "react-router-dom";
+import EntryBlanck from "../components/forms/EntryBlanck";
 
 function Contacts() {
     const [activemodal, setActivemodal] = useState(false);
     const [data, setData] = useState('');
-
+    const postResume = (pos = '') => {
+        setData(pos)
+        setActivemodal(true)
+    }
     const people = [
         {
             photo: '1.png',
@@ -80,43 +85,23 @@ function Contacts() {
 
     return (
         <div className={style.bodymain}>
-            <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<PostContact man={data}  setActivemodal={setActivemodal}/>} setData={setData} />
+            <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<EntryBlanck man={data}  setActivemodal={setActivemodal}/>} setData={setData} />
             <SmallHeader />
-            <TwoBlocks />
-            <div className={style.listpersonal}>
-                <div className={style.title}>КОНТАКТЫ</div>
-                <div className={style.list}>
-                    {people.map((man, index) => (
-                        <div
-                            className={style.blockman}
-                            key={index}
-                            // ref={(el) => blockRefs.current[index] = el}
-                        >
-                            <div className={style.photo} style={(man.photo.length > 0)?{backgroundImage: `url('files/mans/${man.photo}')`}:{}}></div>
-                            <div className={style.fio}>
-                                <div className={style.name}>{man.firstname}</div>
-                                <div className={style.name}>{man.secondname}</div>
-                                <div className={style.name}>{man.lastname}</div>
-                            </div>
-                            <div className={style.dev}>{man.position}</div>
-                            <div className={style.btncontact} onClick={() => {setActivemodal(true);setData(man)}}>Написать</div>
-                        </div>
-                    ))}
-                </div>
-            </div>
             <div className={style.contacts}>
                 <div className={style.ontheleft}>
                     <div className={style.container50}>
+                        <div className={style.strock}>телефон</div>
+                        <div className={style.strock}>+7 (3462) 51-11-72</div>
                         <div className={style.strock}>адрес</div>
-                        <div className={style.strock}>628403, Ханты-Мансийский автономный округ,</div>
-                        <div className={style.strock}>г. Сургут, ул. 30 лет Победы 27/2</div>
+                        <div className={style.strock}>г. Сургут, ул. Университетская 19</div>
                     </div>
                 </div>
                 <div className={style.ontheright}>
                     <div className={style.container50}>
-                        <div className={style.strock}>Контакты</div>
-                        <div className={style.strock}>+7 (346) 222-12-11</div>
-                        <div className={style.strock}>mail@gk-omedia.ru</div>
+                        <div className={style.entry}>
+                            <Link to='/allprograms' className={style.btn}>Все программы</Link>
+                            <div className={style.btn} onClick={()=>postResume()}>Записаться</div>
+                        </div>
                     </div>
                 </div>
             </div>

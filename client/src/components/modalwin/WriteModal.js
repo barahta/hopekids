@@ -28,7 +28,7 @@ function WriteModal({activemodal, setActivemodal, data, setData}) {
         <div className={style.main} style={activemodal ? {display: 'flex'} : {}} >
 
             <div className={style.backclose} onClick={() => {setActivemodal(false); setData('')}}>
-                <div className={style.logo}><img src="/files/header/logomain.svg" alt=""/></div>
+                <div className={style.logo}><img src="/files/header/logomain4.svg" alt=""/></div>
                 <div className={style.closes} onClick={() => {setActivemodal(false); setData('')}}>Закрыть</div>
             </div>
             <div className={style.content}>

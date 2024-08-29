@@ -12,6 +12,8 @@ import Footer from "../components/footer/Footer";
 import {useEffect} from "react";
 import {useLocation} from "react-router-dom";
 import Cosmos from "../components/cosmos/Cosmos";
+import Planet from "../components/planet/Planet";
+import Prices from "../components/prices/Prices";
 
 function Main () {
 
@@ -20,11 +22,11 @@ function Main () {
         <div className={style.bodymain}>
             <NewHeader />
             <Cosmos />
+            <Planet />
+            <Prices />
             {/*<TwoBlocks />*/}
             {/*<Group />*/}
             {/*<NewAbout />*/}
-            <Actives />
-            <NewsBlock />
             <Footer />
             {/*<HeaderMain />*/}
             {/*<div className={style.blockvideo}>*/}

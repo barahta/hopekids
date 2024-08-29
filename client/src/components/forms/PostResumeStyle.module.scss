@@ -38,6 +38,15 @@
       transition: 0.2s;
       margin-top: 15px;
       color: #454545;
+      -webkit-appearance: none;
+      -moz-appearance: textfield;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+    input[type='number'] {
+      -moz-appearance: textfield;
     }
     .forminput:active{
       border-bottom: 3px solid #6E037B;
