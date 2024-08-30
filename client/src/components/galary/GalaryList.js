@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import style from './GalaList.module.scss';
 import PostContact from "../forms/PostContact";
 import WriteModal from "../modalwin/WriteModal";
+import OpenImg from "./OpenImg";
 
 function GalaryList (){
 
@@ -157,7 +158,7 @@ function GalaryList (){
     const [activemodal, setActivemodal] = useState(false);
     const [data, setData] = useState('');
     const [more, setMore] = useState(8)
-    const postResume = (pos = '') => {
+    const postResume = (pos) => {
         setData(pos)
         setActivemodal(true)
     }
@@ -178,10 +179,10 @@ function GalaryList (){
 
     return (
         <div className={style.main}>
-            <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<PostContact man={data}  setActivemodal={setActivemodal}/>} setData={setData} />
+            <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<OpenImg img={data} />} setData={setData}/>
             <div className={style.grid} ref={containerRef}>
                 {images.map((image, index) =>{ if(index<more){return(
-                    <div key={index} className={style.item} onClick={()=>postResume()}>
+                    <div key={index} className={style.item} onClick={()=>postResume(image.src)}>
                         <img src={`./files/galary/${image.src}`} alt={`Gallery ${index}`} />
                     </div>
                 )}})}
