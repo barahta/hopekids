@@ -19,24 +19,46 @@ app.use(cors({
     origin: config.get('client_url'),
     credentials: true
 }))
+// app.use(cors({
+//     origin: function (origin, callback) {
+//         if (['http://localhost:3000', 'http://localhost:3003', 'http://localhost:3001', 'http://localhost:3002', 'http://localhost:3004', 'http://localhost:3005', 'http://localhost:3010'].includes(origin) || !origin) {
+//             callback(null, true)
+//         } else {
+//             callback(new Error('Not allowed by CORS'))
+//         }
+//     },
+//     credentials: true
+// }));
 app.use('/files', express.static(config.get('file_path')));
 app.use(cookieParser())
 app.use(express.json({ extended: true,limit: '3mb' }))
 app.use(express.urlencoded({ extended: true,limit: '3mb' }))
 app.use('/api', router)
-app.use(errorMiddlewere) //Обязательно последний!
-// // Подключаем папку с билдом React-приложения
+//
+
+app.use('/video', express.static('/home/www/adminomedia/client/build/videos/'));
+app.use('/gallery', express.static('/home/www/adminomedia/client/build/'));
+// app.use(express.static(path.join(__dirname, 'client', 'build')));
+//
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+// });
+
+
+// Подключаем папку с билдом React-приложения
 // app.use(express.static(path.join(__dirname, 'client', 'build')));
 //
 // // Для всех остальных запросов отдаем index.html
 // app.get('*', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 // });
+
+app.use(errorMiddlewere) //Обязательно последний!
 const start = async () => {
     try{
 
         // await mailService.sendActivationMail('barahtasurgut@gmail.com','test!')
-        await sequelize.authenticate()
+        // await sequelize.authenticate()
         // await sequelize.sync({ force: true })
         console.log('connect to DB')
         app.listen(PORT,() => {

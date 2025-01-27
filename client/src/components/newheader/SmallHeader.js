@@ -31,7 +31,7 @@ function SmallHeader(){
     return(
         <div className={style.main}>
             <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<EntryBlanck man={data}  setActivemodal={setActivemodal}/>} setData={setData} />
-            <div className={style.menumobile} style={(openburger)?{maxHeight:'100%', opacity: '1', marginTop: '0px', display:'flex'}:{}}>
+            <div className={style.menumobile} style={(openburger)?{maxHeight:'100%', opacity: '1', marginTop: '0px', display:'flex', zIndex: 100}:{}}>
 
                 <div className={style.rightpart}>
                     <div className={style.board}>
@@ -50,7 +50,7 @@ function SmallHeader(){
                     <img src="/files/header/logomain3.svg" alt=""/>
                 </Link>
                 <div className={style.rightpart}>
-                    <div className={style.burder} onClick={()=>setOpenburger(!openburger)} style={(openburger)?{rotate: '90deg', width: '70px'}:{rotate: '0deg'}}>
+                    <div className={style.burder} onClick={()=>setOpenburger(!openburger)} style={(openburger)?{rotate: '90deg', width: '70px', zIndex: 100 }:{rotate: '0deg'}}>
                         <div className={style.line} style={(openburger)?{backgroundColor:'#454545'}:{}}></div>
                         <div className={style.line} style={(openburger)?{backgroundColor:'#454545'}:{}}></div>
                         <div className={style.line} style={(openburger)?{backgroundColor:'#454545'}:{}}></div>

@@ -3,6 +3,7 @@ import style from './GalaList.module.scss';
 import PostContact from "../forms/PostContact";
 import WriteModal from "../modalwin/WriteModal";
 import OpenImg from "./OpenImg";
+import NewsService from "../../services/NewsService";
 
 function GalaryList (){
 
@@ -154,40 +155,56 @@ function GalaryList (){
     ]
 
     const containerRef = useRef(null);
-    const [gridItems, setGridItems] = useState([]);
     const [activemodal, setActivemodal] = useState(false);
     const [data, setData] = useState('');
-    const [more, setMore] = useState(8)
+    const [more, setMore] = useState(8);
+    const [allImgs, setAllImgs] = useState([])
     const postResume = (pos) => {
-        setData(pos)
-        setActivemodal(true)
-    }
-    useEffect(() => {
-        const container = containerRef.current;
-        const updateGridItems = () => {
-            if (container) {
-                const items = Array.from(container.querySelectorAll('.item'));
-                setGridItems(items);
+        setData(pos);
+        setActivemodal(true);
+    };
+
+    const getGalleryImgs = async () => {
+        console.log('функция запускается')
+        try {
+            const { data } = await NewsService.getGalleryImgs({ capter: 'hopekids' });
+            console.log(data)
+            if (data) {
+                setAllImgs(data);
             }
-        };
+        } catch (e) {
+            console.log(e);
+        }
+    };
 
-        window.addEventListener('resize', updateGridItems);
-        updateGridItems();
-
-        return () => window.removeEventListener('resize', updateGridItems);
-    }, [images]);
+    useEffect(() => {
+        getGalleryImgs()
+    }, []);
 
     return (
         <div className={style.main}>
-            <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<OpenImg img={data} />} setData={setData}/>
+            <WriteModal
+                activemodal={activemodal}
+                setActivemodal={setActivemodal}
+                data={<OpenImg img={data} />}
+                setData={setData}
+            />
             <div className={style.grid} ref={containerRef}>
-                {images.map((image, index) =>{ if(index<more){return(
-                    <div key={index} className={style.item} onClick={()=>postResume(image.src)}>
-                        <img src={`./files/galary/${image.src}`} alt={`Gallery ${index}`} />
+                {allImgs.slice(0, more).map((image, index) => (
+                    <div
+                        key={index}
+                        className={style.item}
+                        onClick={() => postResume(image.image)}
+                    >
+                        <img src={`/gallery${image.image}`} />
                     </div>
-                )}})}
+                ))}
             </div>
-            <div className={style.more} onClick={()=>setMore(more+8)} style={(images.length <= more)?{display: 'none'}:{}}>ЕЩЁ</div>
+            {allImgs.length > more && (
+                <div className={style.more} onClick={() => setMore(more + 8)}>
+                    ЕЩЁ
+                </div>
+            )}
         </div>
     );
 }

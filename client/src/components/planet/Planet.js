@@ -1,12 +1,16 @@
 import { useEffect, useState, useRef } from "react";
 import style from './Planet.module.scss';
+import WriteModal from "../modalwin/WriteModal";
+import EntryBlanck from "../forms/EntryBlanck";
+import EntryBlanckMore from "../forms/EntryBlanckMore";
 
 function Planet() {
     const [offsetX, setOffsetX] = useState(0);
     const elementRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
     const numRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
-
+    const [activemodal, setActivemodal] = useState(false)
+    const [data, setData] = useState('')
     const handleScroll = () => {
         if (elementRef.current) {
             const elementTop = elementRef.current.getBoundingClientRect().top;
@@ -76,6 +80,8 @@ function Planet() {
 
     return (
         <div className={style.main}>
+            <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<EntryBlanckMore setActivemodal={setActivemodal}/>} setData={setData} />
+
             <div className={style.paralax}></div>
             <div className={style.container}>
                 <div className={style.content}>
@@ -87,7 +93,7 @@ function Planet() {
                             Мы с радостью организуем праздник у вас дома! Большой выбор программ специально для Вас!
                         </div>
                         <div className={style.btnwriten}>
-                            <div className={style.btn}>Подробности</div>
+                            <div className={style.btn} onClick={()=>setActivemodal(true)}>Подробности</div>
                         </div>
                     </div>
                     <div className={style.left}>

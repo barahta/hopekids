@@ -35,7 +35,7 @@ function NewHeader() {
                     playsInline
                     className={style.videoContent}
                 >
-                    <source src="/files/header/intro.mp4" type="video/mp4" />
+                    <source src={`/video/hopekids/video.mp4`} type="video/mp4" />
                 </video>
                 )}
             </div>
@@ -49,7 +49,7 @@ function NewHeader() {
                         </div>
                         {/*<div className={style.btn}>О нас<div className={style.border}></div></div>*/}
                         <Link to='/allprograms' className={style.btn}>Все программы<div className={style.border}></div></Link>
-                        <Link to='/contacts' className={style.btn}>Фототур<div className={style.border}></div></Link>
+                        <Link to='/phototour' className={style.btn}>Фототур<div className={style.border}></div></Link>
                         <Link to='/contacts' className={style.btn}>Контакты<div className={style.border}></div></Link>
                     </div>
 

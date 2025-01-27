@@ -4,7 +4,7 @@ import useNotification from "../../hooks/useNotification.hook";
 import Nota from "./Nota";
 import {useMessage} from "../../hooks/message.hook";
 
-function EntryProgram ({program,setActivemodal}){
+function EntryBlanckMore ({setActivemodal}){
 
     const [myname, setMyname] = useState('')
     const [phone, setPhone] = useState('')
@@ -19,7 +19,6 @@ function EntryProgram ({program,setActivemodal}){
             setActivemodal(false)
             setMyname('')
             setPhone('')
-            setDate('')
             message('Ожидайте звонка для подтверждения')
         }
     }
@@ -27,11 +26,8 @@ function EntryProgram ({program,setActivemodal}){
     return (
         <div className={style.main}>
             <div className={style.up}>
-                <div className={style.title}>Запись на</div>
-                <div className={style.vakname}>{program.name}</div>
-                <div className={style.vakname}>Стоимость {program.price}</div>
+                <div className={style.title}>Обратная связь</div>
                 <input onChange={e=>setMyname(e.target.value)} value={myname} type="text" className={style.forminput} placeholder='Как Вас зовут'/>
-                <input onChange={e=>setDate(e.target.value)} value={date} type="date" className={style.forminput} placeholder='Дата'/>
                 <input onChange={e=>setPhone(e.target.value)} value={phone} type="number" className={style.forminput} placeholder='Телефон для связи'/>
             </div>
             <div className={style.down}>
@@ -44,4 +40,4 @@ function EntryProgram ({program,setActivemodal}){
     )
 }
 
-export default EntryProgram
+export default EntryBlanckMore

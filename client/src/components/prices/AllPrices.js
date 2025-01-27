@@ -3,6 +3,7 @@ import style from './AllPrices.module.scss';
 import EntryProgram from "../forms/EntryProgram";
 import WriteModal from "../modalwin/WriteModal";
 import * as PropTypes from "prop-types";
+import NewsService from "../../services/NewsService";
 
 
 function AllPrices() {
@@ -23,6 +24,7 @@ function AllPrices() {
                 'Воздушные шары',
                 'Музыкальное сопровождение'
             ],
+            priory: 0,
             img: [
                 {
                     name: 'fullraket.svg',
@@ -224,18 +226,217 @@ function AllPrices() {
             ]
         }
     ]
+    const imagesaminate = [
+        [{
 
+            name: 'fullraket.svg',
+            style: 0
+        }],
+        [{
+
+            name: 'planet1.svg',
+            style: 1
+        }],
+        [{
+
+            name: 'planet2.svg',
+            style: 2
+
+        }],
+        [{
+
+            name: 'stars.svg',
+            style: 3
+        }],
+        [{
+
+            name: 'fullraket.svg',
+            style: 4
+        }],
+        [
+            {
+                name: 'planet1.svg',
+                style: 5
+            },
+            {
+                name: 'stars.svg',
+                style: 6
+            }
+        ],
+        [{
+
+            name: 'fullraket.svg',
+            style: 0
+        }],
+        [{
+
+            name: 'planet1.svg',
+            style: 1
+        }],
+        [{
+
+            name: 'planet2.svg',
+            style: 2
+
+        }],
+        [{
+
+            name: 'stars.svg',
+            style: 3
+        }],
+        [{
+
+            name: 'fullraket.svg',
+            style: 4
+        }],
+        [
+            {
+                name: 'planet1.svg',
+                style: 5
+            },
+            {
+                name: 'stars.svg',
+                style: 6
+            }
+        ],
+        [{
+
+            name: 'fullraket.svg',
+            style: 0
+        }],
+        [{
+
+            name: 'planet1.svg',
+            style: 1
+        }],
+        [{
+
+            name: 'planet2.svg',
+            style: 2
+
+        }],
+        [{
+
+            name: 'stars.svg',
+            style: 3
+        }],
+        [{
+
+            name: 'fullraket.svg',
+            style: 4
+        }],
+        [
+            {
+                name: 'planet1.svg',
+                style: 5
+            },
+            {
+                name: 'stars.svg',
+                style: 6
+            }
+        ],
+        [{
+
+            name: 'fullraket.svg',
+            style: 0
+        }],
+        [{
+
+            name: 'planet1.svg',
+            style: 1
+        }],
+        [{
+
+            name: 'planet2.svg',
+            style: 2
+
+        }],
+        [{
+
+            name: 'stars.svg',
+            style: 3
+        }],
+        [{
+
+            name: 'fullraket.svg',
+            style: 4
+        }],
+        [
+            {
+                name: 'planet1.svg',
+                style: 5
+            },
+            {
+                name: 'stars.svg',
+                style: 6
+            }
+        ],
+        [{
+
+            name: 'fullraket.svg',
+            style: 0
+        }],
+        [{
+
+            name: 'planet1.svg',
+            style: 1
+        }],
+        [{
+
+            name: 'planet2.svg',
+            style: 2
+
+        }],
+        [{
+
+            name: 'stars.svg',
+            style: 3
+        }],
+        [{
+
+            name: 'fullraket.svg',
+            style: 4
+        }],
+        [
+            {
+                name: 'planet1.svg',
+                style: 5
+            },
+            {
+                name: 'stars.svg',
+                style: 6
+            }
+        ],
+    ]
     const makeSale = (block) => {
 
     }
 
     const [activemodal, setActivemodal] = useState(false)
     const [data, setData] = useState('')
+    const [list, setList] = useState([])
+
     const postResume = (pos = '') => {
         setData(pos)
         setActivemodal(true)
     }
+    const getPacks = async () => {
+        try{
+            const {data} = await NewsService.getAllPacks({capter: 'hopekids'})
+            if(data){
+                data.reverse()
+                const sortedPrograms = data.sort((a, b) => b.priory - a.priory);
+                setList(sortedPrograms)
+                console.log(sortedPrograms)
+            }
+        }catch(e){
+            console.log(e)
+        }
+    }
 
+    useEffect(()=>{
+        getPacks()
+    },[])
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -270,30 +471,59 @@ function AllPrices() {
                 <div className={style.title}>Программы</div>
             </div>
             <div className={style.container}>
-                {programs.map((block, index)=>(
-                    <div
-                        key={index}
-                        className={`${style.blocks} ${visibleBlocks[index] ? style.visible : ''}`}
-                        ref={el => blockRefs.current[index] = el}
-                        data-index={index}
+                {/*{programs.map((block, index)=>(*/}
+                {/*    <div*/}
+                {/*        key={index}*/}
+                {/*        className={`${style.blocks} ${visibleBlocks[index] ? style.visible : ''}`}*/}
+                {/*        ref={el => blockRefs.current[index] = el}*/}
+                {/*        data-index={index}*/}
 
-                    >
-                        <div className={style.cap}>{block.cap}</div>
-                        <div className={style.desc}>{block.desc}</div>
-                        <div className={style.price}>{block.price}</div>
-                        <div className={style.points}>
-                            {block.points.map((point, indpoint)=>(
-                                <p key={indpoint}>{point}</p>
-                            ))}
+                {/*    >*/}
+                {/*        <div className={style.cap}>{block.cap}</div>*/}
+                {/*        <div className={style.desc}>{block.desc}</div>*/}
+                {/*        <div className={style.price}>{block.price}</div>*/}
+                {/*        <div className={style.points}>*/}
+                {/*            {block.points.map((point, indpoint)=>(*/}
+                {/*                <p key={indpoint}>{point}</p>*/}
+                {/*            ))}*/}
 
-                        </div>
-                        <div className={style.subscript}><div className={style.btn} onClick={()=>postResume(block)}>записаться</div></div>
-                        {(block.img)&&block.img.map((card, indexImg)=>(
-                            <img key={indexImg} src={`./files/kids/${card.name}`} className={styles[card.style]}></img>
-                        ))}
+                {/*        </div>*/}
+                {/*        <div className={style.subscript}><div className={style.btn} onClick={()=>postResume(block)}>записаться</div></div>*/}
+                {/*        {(block.img)&&block.img.map((card, indexImg)=>(*/}
+                {/*            <img key={indexImg} src={`./files/kids/${card.name}`} className={styles[card.style]}></img>*/}
+                {/*        ))}*/}
 
-                    </div>
-                ))}
+                {/*    </div>*/}
+                {/*))}*/}
+
+                {list.map((block, index)=>{
+
+                        return(
+                            <div
+                                key={index}
+                                className={`${style.blocks}`}
+
+                            >
+                                <div className={style.cap}>{block.name}</div>
+                                <div className={style.desc}>{block.time}</div>
+                                <div className={style.price}>{block.price}</div>
+                                <div className={style.points} style={(block.desc.length > 8)?{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}:{}}>
+                                    {block.desc.map((point, indpoint)=>(
+                                        <p key={indpoint}>{point}{(block.desc.length > 8)&&';  '}{(block.desc.length > 8)&&' '}</p>
+                                    ))}
+
+                                </div>
+
+                                <div className={style.subscript}><div className={style.btn} onClick={()=>postResume(block)}>записаться</div></div>
+                                {(imagesaminate[index])&&imagesaminate[index].map((card, indexImg)=>(
+                                    <img key={indexImg} src={`./files/kids/${card.name}`} className={styles[card.style]}></img>
+                                ))}
+
+                            </div>
+                        )
+
+
+                })}
 
 
             </div>

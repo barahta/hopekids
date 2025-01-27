@@ -2,11 +2,13 @@ import { useEffect, useState, useRef } from "react";
 import style from './Prices.module.scss';
 import EntryProgram from "../forms/EntryProgram";
 import WriteModal from "../modalwin/WriteModal";
-import * as PropTypes from "prop-types";
+import NewsService from "../../services/NewsService";
+import {Link} from "react-router-dom";
 
 
 function Prices() {
     const [visibleBlocks, setVisibleBlocks] = useState({});
+    const [list, setList] = useState([]);
     const blockRefs = useRef([]);
     const styles = [
         style.raketa, style.planet1, style.planet2, style.stars,style.raketa2,style.planet3,style.stars2
@@ -23,6 +25,7 @@ function Prices() {
                 'Воздушные шары',
                 'Музыкальное сопровождение'
             ],
+            priory: 1,
             img: [
                 {
                     name: 'fullraket.svg',
@@ -119,7 +122,188 @@ function Prices() {
             ]
         }
     ]
+    const imagesaminate = [
+        [{
 
+                    name: 'fullraket.svg',
+                    style: 0
+        }],
+        [{
+
+                    name: 'planet1.svg',
+                    style: 1
+        }],
+        [{
+
+                    name: 'planet2.svg',
+                    style: 2
+
+        }],
+        [{
+
+                    name: 'stars.svg',
+                    style: 3
+        }],
+        [{
+
+                    name: 'fullraket.svg',
+                    style: 4
+        }],
+        [
+                {
+                    name: 'planet1.svg',
+                    style: 5
+                },
+            {
+                name: 'stars.svg',
+                style: 6
+            }
+        ],
+        [{
+
+            name: 'fullraket.svg',
+            style: 0
+        }],
+        [{
+
+            name: 'planet1.svg',
+            style: 1
+        }],
+        [{
+
+            name: 'planet2.svg',
+            style: 2
+
+        }],
+        [{
+
+            name: 'stars.svg',
+            style: 3
+        }],
+        [{
+
+            name: 'fullraket.svg',
+            style: 4
+        }],
+        [
+            {
+                name: 'planet1.svg',
+                style: 5
+            },
+            {
+                name: 'stars.svg',
+                style: 6
+            }
+        ],
+        [{
+
+            name: 'fullraket.svg',
+            style: 0
+        }],
+        [{
+
+            name: 'planet1.svg',
+            style: 1
+        }],
+        [{
+
+            name: 'planet2.svg',
+            style: 2
+
+        }],
+        [{
+
+            name: 'stars.svg',
+            style: 3
+        }],
+        [{
+
+            name: 'fullraket.svg',
+            style: 4
+        }],
+        [
+            {
+                name: 'planet1.svg',
+                style: 5
+            },
+            {
+                name: 'stars.svg',
+                style: 6
+            }
+        ],
+        [{
+
+            name: 'fullraket.svg',
+            style: 0
+        }],
+        [{
+
+            name: 'planet1.svg',
+            style: 1
+        }],
+        [{
+
+            name: 'planet2.svg',
+            style: 2
+
+        }],
+        [{
+
+            name: 'stars.svg',
+            style: 3
+        }],
+        [{
+
+            name: 'fullraket.svg',
+            style: 4
+        }],
+        [
+            {
+                name: 'planet1.svg',
+                style: 5
+            },
+            {
+                name: 'stars.svg',
+                style: 6
+            }
+        ],
+        [{
+
+            name: 'fullraket.svg',
+            style: 0
+        }],
+        [{
+
+            name: 'planet1.svg',
+            style: 1
+        }],
+        [{
+
+            name: 'planet2.svg',
+            style: 2
+
+        }],
+        [{
+
+            name: 'stars.svg',
+            style: 3
+        }],
+        [{
+
+            name: 'fullraket.svg',
+            style: 4
+        }],
+        [
+            {
+                name: 'planet1.svg',
+                style: 5
+            },
+            {
+                name: 'stars.svg',
+                style: 6
+            }
+        ],
+    ]
     const makeSale = (block) => {
 
     }
@@ -151,6 +335,25 @@ function Prices() {
             observer.disconnect();
         };
     }, []);
+
+    const getPacks = async () => {
+        try{
+            const {data} = await NewsService.getAllPacks({capter: 'hopekids'})
+            if(data){
+                data.reverse()
+                const sortedPrograms = data.sort((a, b) => b.priory - a.priory);
+                setList(sortedPrograms)
+                console.log(sortedPrograms)
+            }
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    useEffect(()=>{
+        getPacks()
+    },[])
+
     return (
         <div className={style.main}>
             <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<EntryProgram program={data}  setActivemodal={setActivemodal}/>} setData={setData} />
@@ -165,33 +368,40 @@ function Prices() {
                 <div className={style.title}>СТОИМОСТЬ</div>
             </div>
             <div className={style.container}>
-                {programs.map((block, index)=>(
-                    <div
-                        key={index}
-                        className={`${style.blocks} ${visibleBlocks[index] ? style.visible : ''}`}
-                        ref={el => blockRefs.current[index] = el}
-                        data-index={index}
+                {list.map((block, index)=>{
+                    if(index<6){
+                        return(
+                            <div
+                                key={index}
+                                className={`${style.blocks}`}
 
-                    >
-                        <div className={style.cap}>{block.cap}</div>
-                        <div className={style.desc}>{block.desc}</div>
-                        <div className={style.price}>{block.price}</div>
-                        <div className={style.points}>
-                            {block.points.map((point, indpoint)=>(
-                                <p key={indpoint}>{point}</p>
-                            ))}
+                            >
+                                <div className={style.cap}>{block.name}</div>
+                                <div className={style.desc}>{block.time}</div>
+                                <div className={style.price}>{block.price}</div>
+                                <div className={style.points} style={(block.desc.length > 8)?{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}:{}}>
+                                    {block.desc.map((point, indpoint)=>(
+                                        <p key={indpoint}>{point}{(block.desc.length > 8)&&';  '}{(block.desc.length > 8)&&' '}</p>
+                                    ))}
 
-                        </div>
-                        <div className={style.subscript}><div className={style.btn} onClick={()=>postResume(block)}>записаться</div></div>
-                        {(block.img)&&block.img.map((card, indexImg)=>(
-                            <img key={indexImg} src={`./files/kids/${card.name}`} className={styles[card.style]}></img>
-                        ))}
+                                </div>
 
-                    </div>
-                ))}
+                                <div className={style.subscript}><div className={style.btn} onClick={()=>postResume(block)}>записаться</div></div>
+                                {(imagesaminate[index])&&imagesaminate[index].map((card, indexImg)=>(
+                                    <img key={indexImg} src={`./files/kids/${card.name}`} className={styles[card.style]}></img>
+                                ))}
+
+                            </div>
+                        )
+                    }
+
+                })}
 
 
             </div>
+            <Link to='/allprograms' className={style.morew}>
+                Все пакеты
+            </Link>
         </div>
     );
 }
